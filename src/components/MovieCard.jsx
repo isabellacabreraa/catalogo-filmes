@@ -15,11 +15,16 @@ const MovieCard = ({
 
       <div className="relative aspect-[2/3] overflow-hidden">
 
-        <img
-          src={movie.image}
-          alt={`Capa do filme ${movie.title}`}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+<img
+  src={movie.image}
+  alt={`Capa do filme ${movie.title}`}
+  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  onError={(e) => {
+    e.target.onerror = null;
+    // Utiliza um SVG embutido em base64 para evitar bloqueios de rede/adblockers
+    e.target.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='100%' height='100%' fill='%231f1f23'/><text x='50%' y='50%' fill='%23a1a1aa' font-family='sans-serif' font-size='24' font-weight='bold' text-anchor='middle'>Sem Capa</text></svg>";
+  }}
+/>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
 
