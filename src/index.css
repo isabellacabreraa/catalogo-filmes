@@ -1,1 +1,62 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* Container principal para centralizar tudo */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+/* A "caixa" do formulário com efeito tecnológico */
+.tech-form {
+  background: rgba(15, 15, 20, 0.85); /* Fundo escuro translúcido */
+  backdrop-filter: blur(10px); /* Efeito de vidro */
+  border: 1px solid rgba(255, 0, 60, 0.3); /* Borda vermelha sutil */
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.15); /* Brilho neon suave */
+}
+
+/* Inputs super modernos */
+.tech-form input[type="text"],
+.tech-form input[type="email"],
+.tech-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  color: #fff;
+  padding: 10px 5px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Efeito quando o usuário clica no input (Glow) */
+.tech-form input:focus,
+.tech-form textarea:focus {
+  border-bottom: 2px solid #ff003c; /* Vermelho CineVerse */
+  box-shadow: 0 10px 10px -10px rgba(255, 0, 60, 0.5);
+}
+
+/* Botões com estilo */
+.tech-form button {
+  background: linear-gradient(90deg, #ff003c, #b3002a);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 60, 0.4);
+}
